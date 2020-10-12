@@ -7,11 +7,12 @@ vue wrapper for tributejs (https://github.com/zurb/tribute)
 npm i vue-v-tribute
 ```
 
-## Provide default options for tributejs for you whole Vue App
+## Provide default tributejs options for Vue Plugin
 
 You can provide any option supported by tributejs https://github.com/zurb/tribute/blob/master/src/Tribute.js#L8-L33
 
 ```
+import VueVTribute from 'vue-v-tribute'
 Vue.use(VueVTribute, {
   noMatchTemplate: () => null,
   menuItemTemplate: (item) => {
@@ -23,7 +24,20 @@ Vue.use(VueVTribute, {
 });
 ```
 
-## Use as Vue-directive on wrapper element or wrapper compnent
+
+## Use as directive
+```
+...
+    <input
+      type="text"
+      // you can override all default tributejs attributes you set globaly here
+      v-tribute="{values: [{username: "Bob"}]}"
+    >
+    </input>
+...
+```
+
+## Use as directive on wrapper element or wrapper compnent
 ```
 ...
     <your-custom-input-component
