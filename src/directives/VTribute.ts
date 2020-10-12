@@ -11,9 +11,9 @@ class VTribute implements DirectiveOptions {
   }
 
   bind: DirectiveFunction = (element: HTMLElement, binding: DirectiveBinding) => {
-    let inputElement: HTMLElement | null = null
-    if (element.nodeName == "INPUT" || element.nodeName == "TEXTAREA") {
-      inputElement = element
+    let inputElement: HTMLElement | null = null;
+    if (element.nodeName === 'INPUT' || element.nodeName === 'TEXTAREA') {
+      inputElement = element;
     } else {
       inputElement = element.querySelector('textarea,input');
     }
