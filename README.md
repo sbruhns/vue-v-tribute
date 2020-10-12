@@ -1,4 +1,4 @@
-# vue-tribute
+# vue-v-tribute
 vue wrapper for tributejs (https://github.com/zurb/tribute)
 
 ## Setup
