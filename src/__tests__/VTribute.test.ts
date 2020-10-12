@@ -13,7 +13,12 @@ describe('VTribute', () => {
       const el = document.createElement('div');
       el.appendChild(document.createElement('p'));
       const vTribute = new VTribute(options);
-      vTribute.bind(el, { value: {}, modifiers: {}, name: '' }, { isRootInsert: false, isComment: false }, { isRootInsert: false, isComment: false });
+      vTribute.bind(
+        el,
+        { value: {}, modifiers: {}, name: '' },
+        { isRootInsert: false, isComment: false },
+        { isRootInsert: false, isComment: false },
+      );
       expect(mockAttach).toBeCalledTimes(0);
     });
 
@@ -22,7 +27,12 @@ describe('VTribute', () => {
       const input = document.createElement('input');
       el.appendChild(input);
       const vTribute = new VTribute(options);
-      vTribute.bind(el, { value: { bindingOption: 'test' }, modifiers: {}, name: '' }, { isRootInsert: false, isComment: false }, { isRootInsert: false, isComment: false });
+      vTribute.bind(
+        el,
+        { value: { bindingOption: 'test' }, modifiers: {}, name: '' },
+        { isRootInsert: false, isComment: false },
+        { isRootInsert: false, isComment: false },
+      );
       expect(mockAttach).toHaveBeenNthCalledWith(1, input);
     });
   });
