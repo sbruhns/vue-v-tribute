@@ -11,7 +11,12 @@ class VTribute implements DirectiveOptions {
   }
 
   bind: DirectiveFunction = (element: HTMLElement, binding: DirectiveBinding) => {
-    const inputElement = element.querySelector('textarea,input');
+    let inputElement: HTMLElement | null = null
+    if (element.nodeName == "INPUT" || element.nodeName == "TEXTAREA") {
+      inputElement = element
+    } else {
+      inputElement = element.querySelector('textarea,input');
+    }
     const mergedOptions = Object.assign(this.options, binding.value);
 
     if (inputElement) {
