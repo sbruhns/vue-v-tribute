@@ -11,27 +11,30 @@ npm i vue-v-tribute
 
 You can provide any option supported by tributejs https://github.com/zurb/tribute/blob/master/src/Tribute.js#L8-L33
 
-```
+```ts
+...
 import VueVTribute from 'vue-v-tribute'
+...
+
 Vue.use(VueVTribute, {
   noMatchTemplate: () => null,
-  menuItemTemplate: (item) => {
-    return `${item.username}`;
+  lookup: 'name',
+  menuItemTemplate: (item: TributeItem<any>) => {
+    return `${item.original.name} - ${item.original.username}`;
   },
-  containerClass: 'tribute-container',
-  selectClass: 'tribute-container__highlight',
-  itemClass: 'tribute-container__item'
+  selectTemplate: function(item: TributeItem<any>) {
+    return '@' + item.original.username;
+  },
 });
 ```
 
-
 ## Use as directive
-```
+```vue
 ...
     <input
       type="text"
-      // you can override all default tributejs attributes you set globaly here
-      v-tribute="{values: [{username: "Bob"}]}"
+      // you can override all default tributejs attributes you set globally here
+      v-tribute="{values: [ { name: 'Firstname Lastname', username: 'fila' }, { name: 'Max Mustermann', username: 'madmax' }]}"
     >
     </input>
 ...
@@ -41,8 +44,8 @@ Vue.use(VueVTribute, {
 ```
 ...
     <your-custom-input-component
-      // you can override all default tributejs attributes you set globaly here
-      v-tribute="{values: [{username: "Bob"}]}"
+      // you can override all default tributejs attributes you set globally here
+      v-tribute="{values: [ { name: 'Firstname Lastname', username: 'fila' }, { name: 'Max Mustermann', username: 'madmax' }]}"
     >
     </your-custom-input-component>
 ...
