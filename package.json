@@ -4,8 +4,11 @@
   "description": "Vue wrapper for tributejs",
   "main": "lib/main.js",
   "types": "lib/main.d.ts",
-  "repository": "git@github.com:sbruhns/vue-tribute.git",
   "author": "Stefan Bruhns <sbruhns89@gmail.com>",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/sbruhns/vue-v-tribute.git"
+  },
   "license": "MIT",
   "files": [
     "lib/**/*"
