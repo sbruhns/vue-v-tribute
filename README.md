@@ -29,22 +29,22 @@ Vue.use(VueVTribute, {
 ```
 
 ## Use as directive
-```vue
+
+```html
 ...
     <input
       type="text"
-      // you can override all default tributejs attributes you set globally here
       v-tribute="{values: [ { name: 'Firstname Lastname', username: 'fila' }, { name: 'Max Mustermann', username: 'madmax' }]}"
     >
     </input>
 ...
 ```
 
-## Use as directive on wrapper element or wrapper compnent
-```
+## Use as directive on wrapper element or wrapper component
+
+```html
 ...
     <your-custom-input-component
-      // you can override all default tributejs attributes you set globally here
       v-tribute="{values: [ { name: 'Firstname Lastname', username: 'fila' }, { name: 'Max Mustermann', username: 'madmax' }]}"
     >
     </your-custom-input-component>
